@@ -1,7 +1,7 @@
 
 module.exports = {
   new: function(req, res, cb){
-    res.render("doctor/new.ejs")
+    res.render("register.ejs")
   },
 
   create: function(req, res, cb){

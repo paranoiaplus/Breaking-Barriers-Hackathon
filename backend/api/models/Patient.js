@@ -29,7 +29,8 @@ module.exports = {
 
     uniqueCode: {
       type: "STRING",
-      required: true
+      required: true,
+      unique: true
     }
   }
 };

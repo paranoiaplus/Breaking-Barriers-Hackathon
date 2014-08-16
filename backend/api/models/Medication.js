@@ -8,6 +8,40 @@
 module.exports = {
 
   attributes: {
+    medicationName: {
+      type: "STRING",
+      required: true
+    },
+
+    prescribedBy: { // Code of doctor who prescribed med
+      type: "STRING"
+    },
+
+    prescribedTo: {
+      type: "STRING",
+      required: true
+    },
+
+    uniqueCode: {
+      type: "STRING",
+      required: true
+    }
+
+    supposedToTakeToday: {
+      type: "BOOLEAN",
+      required: true
+    },
+
+    timesPerDay: {
+      type: "ARRAY",
+      required: true
+    },
+
+    allTakenToday: {
+      type: "STRING",
+      required: true
+    }
+
 
   }
 };
