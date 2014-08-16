@@ -32,13 +32,8 @@ module.exports = {
       required: true
     },
 
-    timesPerDay: {
-      type: "ARRAY",
-      required: true
-    },
-
-    allTakenToday: {
-      type: "STRING",
+    takenToday: {
+      type: "BOOLEAN",
       required: true
     }
   }

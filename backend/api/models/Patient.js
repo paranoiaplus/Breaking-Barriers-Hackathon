@@ -22,9 +22,8 @@ module.exports = {
       required: true
     },
 
-    medications: {
+    medication: {
       type: "ARRAY",
-      required: true
     },
 
     uniqueCode: {

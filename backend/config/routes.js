@@ -31,10 +31,15 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
+'/': {
+  view: 'index'
+},
+'/register': {
+  view: 'register'
+},
+'post /registerPatient': 'Patient.create',
+'/patient/:uniqueCode': 'Patient.view'
 
-  '/': {
-    view: 'homepage'
-  }
 
   /***************************************************************************
   *                                                                          *
