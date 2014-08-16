@@ -25,7 +25,7 @@ module.exports = {
     uniqueCode: {
       type: "STRING",
       required: true
-    }
+    },
 
     supposedToTakeToday: {
       type: "BOOLEAN",
