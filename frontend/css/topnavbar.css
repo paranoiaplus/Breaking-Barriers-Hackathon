@@ -48,7 +48,8 @@ button {
 #avatar-large {
     width: 200px;
     height: 200px;
-    background-color: black;
+    background-image: url('http://www.clker.com/cliparts/c/1/d/a/12673209761699807181rx%20medicine%20symbol.svg.med.png');
+    background-size: cover;
     float: left;
     margin: 20px 20px 20px 0px;
 }
