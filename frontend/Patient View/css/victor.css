@@ -31,6 +31,7 @@
 
 #bg {
     background-image: url("http://37.media.tumblr.com/1ecfc1ee5d12ecfe0b48c069980609bf/tumblr_n8zm3lrclm1st5lhmo1_1280.jpg");
+    background-size: cover;
     position: absolute;
     z-index: -1;
     height: 100%;
