@@ -17,7 +17,7 @@ module.exports = {
       type: "STRING"
     },
 
-    prescribedTo: {
+    prescribedTo: { // Code of Patient
       type: "STRING",
       required: true
     },
@@ -25,7 +25,7 @@ module.exports = {
     uniqueCode: {
       type: "STRING",
       required: true
-    }
+    },
 
     supposedToTakeToday: {
       type: "BOOLEAN",
@@ -41,8 +41,6 @@ module.exports = {
       type: "STRING",
       required: true
     }
-
-
   }
 };
 
