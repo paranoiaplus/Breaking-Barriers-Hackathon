@@ -62,6 +62,7 @@
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
@@ -77,11 +78,28 @@
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                         <h1>Hello, patient! </h1>
                         <h2>This is what you have to do today.</h2>
+                        <h3>Overall:</h3>
+                        <h3>Morning:</h3>
+                        <h3>Evening:</h3>
                         <!-- <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p> -->
                         
                     </div>
                 </div>
             </div>
+               
+            <div class="container" id="main">
+                <h4>Regimens:</h4>
+                <form role ="form" id="main_input_box">
+                    <label>
+                        <input type="text" class ="form-control" id="custom_textbox" name="Item" placeholder="Medication 1">
+                         <input type="submit" value="Add" class="btn btn-primary add_button">
+                     </label>
+                </form>
+                <form>
+                     <ol class="list-group list_of_items">
+                    </ol>
+                </form>
+             </div>
         </div>
         <!-- /#page-content-wrapper -->
 
@@ -101,6 +119,47 @@
         $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+     <script src="css/do-to.css">
+
+    <!--To-Do List Script -->
+    <script>
+        $(document).ready(function(){
+    $("form#main_input_box").submit(function(event){
+        event.preventDefault();
+        var deleteButton = "<button class='delete btn btn-warning'>Delete</button>";
+        var editButton = "<button class='edit btn btn-success'>Edit</button>";
+        var twoButtons = "<div class='btn-group pull-right'>" + deleteButton + editButton + "</div>";
+        var checkBox = "<div class='checkbox'><label><input type='checkbox' class='pull-right'></label></div>";
+        $(".list_of_items").append("<li class='list-group-item'>" + "<div class='text_holder'>" + $("#custom_textbox").val() + twoButtons + "</div>" + checkBox + "</li>");
+        $("#custom_textbox").val('');
+        });
+         
+        $(".list_of_items").on("click", "button.delete", function(){
+        $(this).closest("li").remove();
+        });
+         
+        $(".list_of_items").on("click", "button.edit", function (){
+        var editItemBox = "<form class='edit_input_box'><input type='text' class='itembox'></form>";
+        var originalItem = $(this).parent().val();
+        var deleteButton = "<button class='delete btn btn-warning'>Delete</button>";
+        var editButton = "<button class='edit btn btn-success'>Edit</button>";
+        var twoButtons = "<div class='btn-group pull-right'>" + deleteButton + editButton + "</div>";
+        $(this).closest("div.text_holder").replaceWith(editItemBox);
+        $("form.edit_input_box ").on("submit", function(){
+        event.preventDefault(); 
+        var checkBox = "<label><input type='checkbox'></label>";
+        $(this).replaceWith("<div>" + $(".itembox").val() + twoButtons + "</div>");
+        }); 
+        });
+         
+        $(".list_of_items").on("click", ":checkbox", function (){
+        $(this).closest("li").toggleClass("completed_item");
+        });
+        });
+</script>
 
 </body>
 
