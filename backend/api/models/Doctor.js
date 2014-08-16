@@ -32,6 +32,10 @@ module.exports = {
     emailAddress: {
       type: "STRING",
       required: true
+    },
+
+    specialization: {
+      type: "STRING"
     }
   }
 };
