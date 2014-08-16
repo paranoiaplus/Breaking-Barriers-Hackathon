@@ -8,7 +8,30 @@
 module.exports = {
 
   attributes: {
+    name: {
+      type: "STRING",
+      required: true
+    },
 
+    patients: {
+      type: "ARRAY",
+      required: true
+    },
+
+    uniqueCode: {
+      type: "STRING",
+      required: true
+    },
+
+    phoneNumber: {
+      type: "STRING",
+      required: true
+    },
+
+    emailAddress: {
+      type: "STRING",
+      required: true
+    }
   }
 };
 

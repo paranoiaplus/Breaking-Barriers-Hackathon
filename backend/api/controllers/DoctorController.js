@@ -1,11 +1,11 @@
-/**
- * DoctorController
- *
- * @description :: Server-side logic for managing doctors
- * @help        :: See http://links.sailsjs.org/docs/controllers
- */
 
 module.exports = {
-	
+  new: function(req, res, cb){
+    res.render("doctor/new.ejs")
+  },
+
+  create: function(req, res, cb){
+    
+  }
 };
 
