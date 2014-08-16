@@ -82,24 +82,24 @@
                         <h3>Morning:</h3>
                         <h3>Evening:</h3>
                         <!-- <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p> -->
-                        
+
                     </div>
                 </div>
             </div>
-               
+
             <div class="container" id="main">
                 <h4>Regimens:</h4>
-                <form role ="form" id="main_input_box">
-                    <label>
-                        <input type="text" class ="form-control" id="custom_textbox" name="Item" placeholder="Medication 1">
-                         <input type="submit" value="Add" class="btn btn-primary add_button">
-                     </label>
-                </form>
-                <form>
-                     <ol class="list-group list_of_items">
-                    </ol>
-                </form>
-             </div>
+                <div id="todoapp">
+                    <header>
+                    <h1>Todos</h1>
+                    <input id="new-todo" type="text" placeholder="What needs to be done?">
+                    </header>
+                    <section id="main">
+                    <ul id="todo-list">
+                    </ul>
+                    </section>
+                </div>
+            </div>
         </div>
         <!-- /#page-content-wrapper -->
 
@@ -122,45 +122,70 @@
 
      <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-     <script src="css/do-to.css">
 
     <!--To-Do List Script -->
     <script>
-        $(document).ready(function(){
-    $("form#main_input_box").submit(function(event){
-        event.preventDefault();
-        var deleteButton = "<button class='delete btn btn-warning'>Delete</button>";
-        var editButton = "<button class='edit btn btn-success'>Edit</button>";
-        var twoButtons = "<div class='btn-group pull-right'>" + deleteButton + editButton + "</div>";
-        var checkBox = "<div class='checkbox'><label><input type='checkbox' class='pull-right'></label></div>";
-        $(".list_of_items").append("<li class='list-group-item'>" + "<div class='text_holder'>" + $("#custom_textbox").val() + twoButtons + "</div>" + checkBox + "</li>");
-        $("#custom_textbox").val('');
-        });
-         
-        $(".list_of_items").on("click", "button.delete", function(){
-        $(this).closest("li").remove();
-        });
-         
-        $(".list_of_items").on("click", "button.edit", function (){
-        var editItemBox = "<form class='edit_input_box'><input type='text' class='itembox'></form>";
-        var originalItem = $(this).parent().val();
-        var deleteButton = "<button class='delete btn btn-warning'>Delete</button>";
-        var editButton = "<button class='edit btn btn-success'>Edit</button>";
-        var twoButtons = "<div class='btn-group pull-right'>" + deleteButton + editButton + "</div>";
-        $(this).closest("div.text_holder").replaceWith(editItemBox);
-        $("form.edit_input_box ").on("submit", function(){
-        event.preventDefault(); 
-        var checkBox = "<label><input type='checkbox'></label>";
-        $(this).replaceWith("<div>" + $(".itembox").val() + twoButtons + "</div>");
-        }); 
-        });
-         
-        $(".list_of_items").on("click", ":checkbox", function (){
-        $(this).closest("li").toggleClass("completed_item");
-        });
-        });
-</script>
+   var EnterKey = 13;
 
+$.fn.isBound = function(type, fn) {
+    var data = this.data('events')[type];
+
+    if (data === undefined || data.length === 0) {
+        return false;
+    }
+
+    return (-1 !== $.inArray(fn, data));
+};
+
+$(document).ready(function() {
+        function runBind() {
+        $('.destroy').on('click', function(e) {
+          $currentListItem = $(this).closest('li');
+
+          $currentListItem.remove();
+        });
+
+        $('.toggle').on('click', function(e) {
+          var $currentListItemLabel = $(this).closest('li').find('label');
+          /*
+           * Do this or add css and remove JS dynamic css.
+           */
+          if ( $currentListItemLabel.attr('data') == 'done' ) {
+              $currentListItemLabel.attr('data', '');
+              $currentListItemLabel.css('text-decoration', 'none');
+          }
+          else {
+              $currentListItemLabel.attr('data', 'done');
+        $currentListItemLabel.css('text-decoration', 'line-through');
+          }
+            });
+        }
+
+    $todoList = $('#todo-list');
+    $('#new-todo').keypress(function(e) {
+    if (e.which === EnterKey) {
+            $('.destroy').off('click');
+            $('.toggle').off('click');
+            var todos = $todoList.html();
+      todos += ""+
+                "<li>" +
+          "<div class='view'>" +
+            "<input class='toggle' type='checkbox'>" +
+            "<label data=''>" + " " + $('#new-todo').val() + "</label>" +
+            "<a class='destroy'></a>" +
+          "</div>" +
+        "</li>";
+
+      $(this).val('');
+        $todoList.html(todos);
+        runBind();
+        $('#main').show();
+
+  }}); // end if
+});
+
+
+    </script>
 </body>
 
 </html>

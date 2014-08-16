@@ -1,8 +1,20 @@
 body {
-  min-height: 2000px;
+  /*min-height: 2000px;*/
   padding-top: 70px;
   background-color: #333;
+  background-color: white;
 }
+
+li {
+    list-style: none;
+}
+
+button {
+    padding: 0px 5px 0px 5px;
+    margin-left: 20px;
+    color: black;
+}
+
 
 .patient-info p {
     font-size: 18px;
@@ -28,31 +40,44 @@ body {
 }
 
 .jumbotron {
-    min-height: 300px;
+    min-height: 500px;
+    background-color: rgba(211, 84, 0, .7);
+    color: white;
+}
 
+.jumbotron h1 {
+    font-size: 48px;
+}
+
+.navbar {
+    background-color: rgba(211, 84, 0, .7);
+
+}
+
+.navbar .navbar-header a{
+    color: white;
+}
+
+.navbar .navbar-collapse .navbar-right .unactive a{
+    color: white;
 }
 
 .navbar .container {
-    margin-top: 80px;
+    margin-top: 0px;
 }
 
 .navbar-nav a {
-    font-size: 20px;
-    margin-left: 30px;
+    font-size: 16px;
+    margin-left: 0px;
 }
 
 .navbar-header .navbar-brand {
-    font-size: 64px;
-    padding-left: 50px;
-    margin-top: -50px;
+    font-size: 18px;
+    padding-left: 30px;
 }
 
 .container {
-    margin-top: 150px;
-}
-
-li {
-    list-style: none;
+    margin-top: 50px;
 }
 
 .patient-list {
@@ -60,7 +85,7 @@ li {
     display: inline;
     float: left;
     /*background-color: white;*/
-    width: 250px;
+    width: 200px;
     /*height: 200px;*/
     margin-left: -40px;
 }
@@ -70,9 +95,9 @@ li {
     float: left;
     margin-left: 40px;
     margin-right: 40px;
-    background-color: gray;
+    background-color: white;
     width: 1px;
-    height: 240px;
+    height: 440px;
     margin-top: -20px;
 
 }
