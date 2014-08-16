@@ -6,9 +6,31 @@
 */
 
 module.exports = {
-
   attributes: {
+    fullName: {
+      type: "STRING",
+      required: true
+    },
 
+    phoneNumber: {
+      type: "STRING",
+      required: true
+    },
+
+    emailAddress: {
+      type: "STRING",
+      required: true
+    },
+
+    medications: {
+      type: "ARRAY",
+      required: true
+    },
+
+    uniqueCode: {
+      type: "STRING",
+      required: true
+    }
   }
 };
 

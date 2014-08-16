@@ -6,6 +6,8 @@
  */
 
 module.exports = {
-	
+  new: function(req, res, cb){
+    res.render("patient/new.ejs")
+  }
 };
 
