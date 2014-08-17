@@ -23,7 +23,7 @@ module.exports = {
       type: "STRING",
       required: true,
       minLength: 6
-    }
+    },
 
     phoneNumber: {
       type: "STRING",
