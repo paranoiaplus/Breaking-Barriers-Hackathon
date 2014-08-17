@@ -60,7 +60,4 @@ module.exports.globals = {
   ****************************************************************************/
 
 	// models: true
-
-  twilioSID: 'AC8b76ea32eed4265b4f957f3c3d3c7d4d',
-  twilioToken: '521a24505a2d19440f2b6f7b68e295e3'
 };
