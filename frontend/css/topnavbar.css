@@ -60,6 +60,16 @@ button {
     color: white;
 }
 
+.jumbotron2 {
+    min-height: 500px;
+    background-color: rgba(246, 132, 41, 1);
+    color: black;
+}
+
+.jumbotron2 .jumbotron2content{
+    padding: 50px;
+}
+
 .jumbotron h1 {
     font-size: 48px;
 }
@@ -129,8 +139,9 @@ button {
 }
 
 /* for the individual view */
-.patientTitleHeader h1 {
-   margin-top: 50px;
-   padding: 20px;
+.patientTitleHeader h2 {
+   margin-top: 0px;
+   padding: 0px;
+   color: white;
 }
 
