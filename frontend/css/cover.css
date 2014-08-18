@@ -66,6 +66,13 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.masthead-brand img {
+  width: 100%;
+  height: auto;
 }
 
 .masthead-nav > li {
