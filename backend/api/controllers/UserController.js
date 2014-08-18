@@ -6,6 +6,16 @@
  */
 
 module.exports = {
-	
+  new: function(req, res){
+    res.render('user/new.ejs')
+  },
+
+  create: function(req, res, cb){
+
+  },
+
+  view: function(req, res, cb){
+
+  }
 };
 
