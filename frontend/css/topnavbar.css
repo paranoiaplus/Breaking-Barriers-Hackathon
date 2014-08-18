@@ -127,6 +127,22 @@ button {
 
 }
 
+
+ .horizontal-line{
+    float: left;
+    margin-top: 20px;
+    height: 1px;
+    width: 800px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.containertodo{
+    float: left;
+
+}
+
 .patient-details {
     float: left;
     display: inline;
