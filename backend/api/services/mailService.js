@@ -11,7 +11,7 @@ module.exports = {
     	});
 
     	smtpTransport.sendMail(mailOptions, function(err, message){
-      		err ? console.log("Message send error: " + err) : console.log("Message sent: " + message.to);
+      		err ? console.log("Message send error.") : console.log("Message sent!");
     	});
 	}
 }

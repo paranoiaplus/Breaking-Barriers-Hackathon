@@ -14,6 +14,7 @@ module.exports = {
 		var patientObj = {
 			email: req.param('email'),
 			password: req.param('password'),
+			phoneNumber: req.param('phoneNumber'),
 			patientID: require('crypto').randomBytes(6).toString('hex'),
 			medications: [],
 			doctors: []

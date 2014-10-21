@@ -8,6 +8,12 @@
 module.exports = {
 
   attributes: {
+    
+    fullName: {
+      type: 'STRING',
+      required: true
+    },
+
   	email: {
   		type: 'STRING',
   		unique: true,
@@ -25,6 +31,12 @@ module.exports = {
   		required: true,
   		unique: true
   	},
+
+    phoneNumber: {
+      type: 'STRING',
+      required: true,
+      unique: true
+    },
 
   	medications: {
   		type: 'Array' // Array of medicaiton IDs
@@ -45,7 +57,6 @@ module.exports = {
   			if (err) return cb(err);
 
   			values.password = hashedPass;
-  			console.log('Completed!');
   			cb();
   		});
   	});
