@@ -1,8 +1,5 @@
 /**
-* Medication.js
-*
-* @description :: TODO: You might write a short summary of how this model works and what it represents here.
-* @docs        :: http://sailsjs.org/#!documentation/models
+* Medication.js 
 */
 
 module.exports = {
@@ -30,11 +27,11 @@ module.exports = {
   	},
 
   	timesPerDay: {
-  		type: 'ARRAY' // Array of times on 24 hr clock.
+  		type: 'ARRAY' // length 3 array: morning, afternoon, evening. 
   	},
 
   	daysPerWeek: {
-  		type: 'ARRAY'
+  		type: 'ARRAY' // length 7 array: SMTWTFS
   	},
 
     notes: {
@@ -53,7 +50,7 @@ module.exports = {
           to: foundPatient.email,
           subject: "Medication prescription notification",
           text: "Hey there! \nYou received a new medication prescription of " + newMed.medicationName + "\nIf there's any issues, please contact your doctor at " + founddoctor.email
-        }
+        };
 
         mailService.send(mailOptions);
 

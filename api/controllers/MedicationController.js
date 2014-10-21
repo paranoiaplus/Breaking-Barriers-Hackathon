@@ -1,9 +1,8 @@
 /**
  * MedicationController
- *
- * @description :: Server-side logic for managing medications
- * @help        :: See http://links.sailsjs.org/docs/controllers
  */
+
+ var schedule = require('node-schedule');
 
 module.exports = {
 	create: function(req, res){
@@ -21,6 +20,13 @@ module.exports = {
 		Medication.create(medObj, function(err, newMedication){
 			if (err) res.json({"Error: " : err}, 400);
 			res.json(newMedication);
+		});
+	},
+
+	createAlert: function(req, res){
+		Medication.findOne({medicationID: req.param('medicationID')}).exec(function findMeds(err, medication){
+			if (err) res.json({error: "Database error, try again later"});
+
 		});
 	}
 };
