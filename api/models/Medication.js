@@ -27,11 +27,11 @@ module.exports = {
   	},
 
   	timesPerDay: {
-  		type: 'ARRAY' // length 3 array: morning, afternoon, evening. 
+  		type: 'ARRAY' // length 4 array: morning, afternoon, evening, night
   	},
 
   	daysPerWeek: {
-  		type: 'ARRAY' // length 7 array: SMTWTFS
+  		type: 'ARRAY' // length 7 array: SMTWTFS. Further doc in alertService.schedule
   	},
 
     notes: {

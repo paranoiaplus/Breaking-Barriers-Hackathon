@@ -2,7 +2,7 @@
  * MedicationController
  */
 
- var schedule = require('node-schedule');
+ 
 
 module.exports = {
 	create: function(req, res){
@@ -26,6 +26,14 @@ module.exports = {
 	createAlert: function(req, res){
 		Medication.findOne({medicationID: req.param('medicationID')}).exec(function findMeds(err, medication){
 			if (err) res.json({error: "Database error, try again later"});
+			/*
+			*	Morning - 7:00
+			*	Afternoon - 13:00
+			*	Evening - 19:00
+			* 	Night - 0:00
+			*/
+			alertService.schedule(medication);
+
 
 		});
 	}
