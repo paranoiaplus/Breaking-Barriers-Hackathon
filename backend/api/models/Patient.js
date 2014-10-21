@@ -57,7 +57,7 @@ module.exports = {
   			if (err) return cb(err);
 
   			values.password = hashedPass;
-  			cb();
+        cb();
   		});
   	});
   },
@@ -71,6 +71,7 @@ module.exports = {
     }
 
     mailService.send(mailOptions);
+    cb();
   }
 };
 
