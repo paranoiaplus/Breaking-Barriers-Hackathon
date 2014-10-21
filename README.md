@@ -1,4 +1,8 @@
-#RxMinders - Backend
+#RxMinders 
 
+Sails.JS side project
 
-Written in SailsJS
+##Technologies Used
+* NodeJS/ExpressJS/SailsJS
+* MongoDB
+* less.js (LESS CSS)
