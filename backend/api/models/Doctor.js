@@ -50,6 +50,29 @@ module.exports = {
   			cb();
   		});
   	});
+  },
+  
+  afterCreate: function(newPatient, cb){
+    var nodemailer = require('nodemailer');
+
+    var smtpTransport = nodemailer.createTransport("SMTP",{
+      service: "Mandrill",
+      auth: {
+        user: sails.config.local.MANDRILL_EMAIL,
+        pass: sails.config.local.MANDRILL_KEY
+      }  
+    });
+
+    var mailOptions = {
+      from: "Paul Vorobyev<hi@pauldoescode.com>",
+      to: newPatient.email,
+      subject: "Welcome to RxMinders!",
+      text: "Hey there! \nThank you for joining RxMinders as a doctor. Feel free to contact me with any bugs, complaints, suggestions, etc. at hi@pauldoescode.com \n- Paul Vorobyev"
+    }
+
+    smtpTransport.sendMail(mailOptions, function(err, message){
+      err ? console.log("Message send error: " + err) : console.log("Message sent: " + message.to);
+    });
   }
 };
 

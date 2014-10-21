@@ -49,6 +49,17 @@ module.exports = {
   			cb();
   		});
   	});
+  },
+
+  afterCreate: function(newPatient, cb){
+    var mailOptions = {
+      from: "Paul Vorobyev<hi@pauldoescode.com>",
+      to: newPatient.email,
+      subject: "Welcome to RxMinders!",
+      text: "Hey there! \nThank you for joining RxMinders as a patient. Feel free to contact me with any bugs, complaints, suggestions, etc. at hi@pauldoescode.com \n- Paul Vorobyev"
+    }
+
+    mailService.send(mailOptions);
   }
 };
 
