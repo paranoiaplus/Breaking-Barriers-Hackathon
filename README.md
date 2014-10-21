@@ -1,8 +1,4 @@
-#RxMinders - Medication Reminders
-
-SailsJS side project.
+#RxMinders - Backend
 
 
-##Technologies Used
-* NodeJS/ExpressJS/SailsJS
-* MongoDB
+Written in SailsJS
